@@ -1,0 +1,33 @@
+
+CREATE TABLE VAR7_SHIP(
+iD           number(2)  CONSTRAINT  VAR7_SHIP_pk_id PRIMARY KEY,
+Name         varchar(100),
+Port         VARCHAR(100),
+Discount     NUMBER(3)  CONSTRAINT VAR7_SHIP_ck_discount CHECK (Discount>=0 AND Discount<=100) 
+);
+
+
+CREATE TABLE VAR7_LOADINGPLACE(
+iD           number(2)  CONSTRAINT  VAR7_LP_pk_id PRIMARY KEY,
+BERTH        varchar(100),
+Port         VARCHAR(100),
+Commission   number(3)  CONSTRAINT VAR7_LP_ck_Commission CHECK (Commission >=0 AND Commission <=100) 
+);
+
+CREATE TABLE VAR7_CARGO(
+iD           number(2)  CONSTRAINT  VAR7_CARGO_pk_id PRIMARY KEY,
+NAME         varchar(100),
+Port         VARCHAR(100),
+Price        number(9) CONSTRAINT VAR7_CARGO_ck_Price CHECK (Price>=0),
+MaxQuantity  number(7) CONSTRAINT VAR7_CARGO_ck_MaxQuantity CHECK (MaxQuantity >=0)  
+);  
+
+CREATE TABLE VAR7_LOADING(
+List_Number     number(5)  CONSTRAINT  VAR7_L_pk_list_number PRIMARY KEY,
+Loading_Date    date,
+Ship_ID         number(2) CONSTRAINT VAR7_L_fk_ship_id REFERENCES VAR7_SHIP(ID),
+LoadingPlace_ID number(2) CONSTRAINT VAR7_L_fk_loadingplace_id REFERENCES VAR7_LoadingPlace(ID),
+Cargo_ID        number(2) CONSTRAINT VAR7_L_fk_cargo_id REFERENCES VAR7_Cargo(ID),
+Count           number(10),  
+Price           number(12) CONSTRAINT VAR7_L_ck_price CHECK (Price>=0)
+);

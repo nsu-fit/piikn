@@ -1,0 +1,89 @@
+--============================================================================================
+
+--¬¿–»¿Õ“ 8
+
+----------------------------------------------------------------------
+--Ã≈—“Œ –¿¡Œ“€:
+
+
+INSERT INTO VAR8_WORK_PLACE values( 1, 'Zavod Metallmash',              'Tomsk',       3);
+INSERT INTO VAR8_WORK_PLACE values( 2, 'Fabrika Nova-Shveja',           'Kemerovo',    2);
+INSERT INTO VAR8_WORK_PLACE values(3,  'Fabrika Buben-duben',           'Barnaul',     5);
+INSERT INTO VAR8_WORK_PLACE values(4,  'OAO Respekt',                   'Novosibirsk', 1);
+INSERT INTO VAR8_WORK_PLACE values(5,  'Zavod Svineclitium',            'Iskitim',     6);
+INSERT INTO VAR8_WORK_PLACE values(6,  'Detskijj sad Junyjj Kehmper',   'Novosibirsk', 3);
+INSERT INTO VAR8_WORK_PLACE values(7,  'Detskijj sad Zlostnyjj chiter', 'Novosibirsk', 1);
+INSERT INTO VAR8_WORK_PLACE values(8,  'Shkola π166',                   'Novosibirsk', 2);
+INSERT INTO VAR8_WORK_PLACE values(9,  'Nochnojj klub Batisso',         'Novosibirsk', 3);
+INSERT INTO VAR8_WORK_PLACE values(10, 'Nochnojj klub Diskokhauz',      'Kemerovo',    6);
+INSERT INTO VAR8_WORK_PLACE values(11, 'Mebel`naja fabrika Derevo-forevo', 'Tomsk',    4);
+
+----------------------------------------------------------------------
+--¿¬“Œœ–≈ƒœ–»ﬂ“»≈
+
+
+INSERT INTO VAR8_AUTOENTERPRISE VALUES( 1, 'AVTO-uslugi', 'Novosibirsk', 3);
+INSERT INTO VAR8_AUTOENTERPRISE VALUES( 2, 'Alkazar',     'Tomsk',       1);
+INSERT INTO VAR8_AUTOENTERPRISE VALUES( 3, 'OAO Mashiny Ivana', 'Kemerovo', 2);
+INSERT INTO VAR8_AUTOENTERPRISE VALUES( 4, 'Akadem-Perevoz',    'Novosibirsk', 2);
+INSERT INTO VAR8_AUTOENTERPRISE VALUES( 5, 'Rul',               'Iskitim',     5); 
+
+----------------------------------------------------------------------
+--“≈’Õ» ¿
+
+
+INSERT INTO VAR8_Machinery VALUES ( 1, 'Avtokran',  'Novosibirsk', 3, 10000);
+INSERT INTO VAR8_Machinery VALUES ( 2, 'Bul`dozer', 'Novosibirsk', 5, 5400);
+INSERT INTO VAR8_Machinery VALUES ( 3, 'Gruzovik',  'Iskitim',     10,3000);
+INSERT INTO VAR8_Machinery VALUES ( 4, 'Cementovoz','Tomsk',       6, 4300);
+
+----------------------------------------------------------------------
+--«¿ ¿«
+
+
+INSERT INTO VAR8_ORDERS VALUES (1,'5.05.2002',  1, 3, 4, 2, 10000);
+INSERT INTO VAR8_ORDERS VALUES (2,'7.05.2002', 10, 5, 2, 1, 4000);
+INSERT INTO VAR8_ORDERS VALUES (3,'12.05.2002', 8, 1, 1, 1, 5030);
+INSERT INTO VAR8_ORDERS VALUES (4,'3.06.2002',  3, 4, 3, 4, 12540);
+INSERT INTO VAR8_ORDERS VALUES (5,'7.06.2002',  4, 3, 1, 3, 43000);
+INSERT INTO VAR8_ORDERS VALUES (6,'18.06.2002', 7, 5, 3, 2, 4500);  
+INSERT INTO VAR8_ORDERS VALUES (7,'25.06.2002', 11,2, 1, 1, 15700);
+INSERT INTO VAR8_ORDERS VALUES (8,'3.07.2002',  5, 4, 2, 2, 4300);
+INSERT INTO VAR8_ORDERS VALUES (9,'15.07.2002', 2, 5, 2, 1, 5430);
+INSERT INTO VAR8_ORDERS VALUES (10,'5.08.2002', 8, 1, 2, 3, 23900);
+INSERT INTO VAR8_ORDERS VALUES (11,'12.08.2002',2, 2, 4, 2, 17300);
+INSERT INTO VAR8_ORDERS VALUES (12,'16.08.2002',6, 1, 4, 1, 9460);
+INSERT INTO VAR8_ORDERS VALUES (13,'25.08.2002',1, 3, 1, 2, 35400);
+INSERT INTO VAR8_ORDERS VALUES (14,'15.09.2002',9, 1, 3, 3, 32090);
+INSERT INTO VAR8_ORDERS VALUES (15,'7.10.2002', 7, 5, 1, 2, 15000);
+INSERT INTO VAR8_ORDERS VALUES (16,'21.10.2002',5, 4, 1, 1, 14300);
+INSERT INTO VAR8_ORDERS VALUES (17,'3.11.2002', 8, 2, 4, 2, 6400);
+INSERT INTO VAR8_ORDERS VALUES (18,'13.11.2002',3, 1, 3, 7, 35800);
+INSERT INTO VAR8_ORDERS VALUES (19,'17.11.2002',3, 5, 1, 2, 56000);
+INSERT INTO VAR8_ORDERS VALUES (20,'24.11.2002',4, 1, 3, 3, 29900);
+INSERT INTO VAR8_ORDERS VALUES (21,'29.11.2002',6, 5, 4, 6, 120030);
+INSERT INTO VAR8_ORDERS VALUES (22,'2.12.2002', 4, 4, 2, 4, 53000);
+INSERT INTO VAR8_ORDERS VALUES (23,'5.12.2002', 3, 4, 1, 2, 80500);
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+     

@@ -1,0 +1,166 @@
+
+ВАРИАНТ 8-1
+
+1) 
+SELECT NAME, DISCOUNT FROM VAR8_WORK_PLACE;
+11 строк
+
+2)
+SELECT DISTINCT A.NAME, W.NAME, W.ADDRESS FROM VAR8_AUTOENTERPRISE A, VAR8_WORK_PLACE W,
+VAR8_ORDERS O
+WHERE
+A.ID = O.Autoenterprise_ID AND
+W.ID = O.WORK_PLACE_ID   AND
+W.ID IN 
+  (SELECT ID FROM VAR8_WORK_PLACE WHERE DISCOUNT>=3) AND
+A.LOCATION<>W.ADDRESS
+;
+
+Ответ:
+
+NAME                                                                             NAME                                                                             ADDRESS                                                                         
+-------------------------------------------------------------------------------- -------------------------------------------------------------------------------- --------------------------------------------------------------------------------
+AVTO-uslugi                                                                      Fabrika Buben-duben                                                              Barnaul                                                                         
+Akadem-Perevoz                                                                   Fabrika Buben-duben                                                              Barnaul                                                                         
+Akadem-Perevoz                                                                   Zavod Svineclitium                                                               Iskitim                                                                         
+OAO Mashiny Ivana                                                                Zavod Metallmash                                                                 Tomsk                                                                           
+Rul                                                                              Detskijj sad Junyjj Kehmper                                                      Novosibirsk                                                                     
+Rul                                                                              Fabrika Buben-duben                                                              Barnaul                                                                         
+Rul                                                                              Nochnojj klub Diskokhauz                                                         Kemerovo                                                                        
+Выбрано 7 строк.
+
+3)
+
+SELECT DISTINCT W.NAME FROM VAR8_WORK_PLACE W, VAR8_Machinery  M, VAR8_ORDERS O
+WHERE
+W.NAME NOT IN 
+   (select W.NAME FROM VAR8_WORK_PLACE W, VAR8_Machinery  M, VAR8_ORDERS O
+    where
+    M.ADDRESS='Iskitim' AND
+    O.Work_Place_ID  = W.ID AND
+    O.Machinery_ID = M.ID)
+ORDER BY W.NAME
+;  
+
+Ответ:
+
+NAME                                                                            
+--------------------------------------------------------------------------------
+Detskijj sad Junyjj Kehmper                                                     
+Fabrika Nova-Shveja                                                             
+Mebel`naja fabrika Derevo-forevo                                                
+Nochnojj klub Diskokhauz                                                        
+Shkola ?166                                                                     
+Zavod Metallmash                                                                
+Zavod Svineclitium                                                              
+Выбрано 7 строк.
+
+4)
+
+SELECT DISTINCT A.NAME FROM VAR8_AUTOENTERPRISE A, VAR8_ORDERS O
+WHERE
+A.ID = O.Autoenterprise_ID AND
+O.Order_DATE BETWEEN '1.06.2002' AND '1.08.2002' AND
+A.Commission = 
+        (
+            SELECT MIN(A.Commission) FROM VAR8_AUTOENTERPRISE A, VAR8_ORDERS O
+            WHERE 
+            O.Order_DATE BETWEEN '1.06.2002' AND '1.08.2002' AND
+            A.ID = O.Autoenterprise_ID
+        );
+
+
+Ответ:
+
+NAME                                                                            
+-------------------------------------------------
+Alkazar                                                                         
+Выбрана 1 строка.
+
+
+5)
+
+SELECT DISTINCT A.NAME FROM VAR8_AUTOENTERPRISE A, VAR8_Machinery  M, VAR8_WORK_PLACE W, VAR8_ORDERS O
+WHERE
+A.ID = O.Autoenterprise_ID AND
+M.ID = O.Machinery_ID AND
+W.ID = O.Work_Place_ID   AND
+M.TYPE='Avtokran'  AND
+W.Discount=(SELECT MAX(Discount) FROM VAR8_WORK_PLACE)
+;
+
+Ответ:
+Akadem-Perevoz                                                                  
+Выбрана 1 строка.
+
+6)
+
+
+SELECT COUNT(M.TYPE) FROM VAR8_AUTOENTERPRISE A, VAR8_Machinery  M, VAR8_WORK_PLACE W, VAR8_ORDERS O
+WHERE
+A.ID = O.Autoenterprise_ID AND
+M.ID = O.Machinery_ID AND
+W.ID = O.Work_Place_ID   AND
+W.NAME='Zavod Metallmash' 
+;
+
+Ответ:
+2
+Выбрана 1 строка.
+
+
+
+===============================================================================
+ДОПОЛНИТЕЛЬНЫЕ ЗАПРОСЫ:
+
+
+1)
+SELECT A.LOCATION, AVG(W.DISCOUNT) AS "AVERAGE DISCOUNT" FROM VAR8_AUTOENTERPRISE A, VAR8_WORK_PLACE W, VAR8_ORDERS O
+WHERE
+A.ID = O.Autoenterprise_ID AND
+W.ID = O.Work_Place_ID   AND
+A.LOCATION IN ('Novosibirsk', 'Tomsk')
+GROUP BY  A.LOCATION
+ORDER BY  2 desc
+;
+
+Ответ:
+
+LOCATION             AVERAGE DI
+---------------------------------
+Novosibirsk          3,54545455
+Tomsk                2,66666667
+Выбрано 2 строк.
+
+
+2)
+
+SELECT A.NAME, A.Commission, SUM(O.Payment) AS "SUMMA ZAKAZOV" FROM VAR8_AUTOENTERPRISE A, VAR8_WORK_PLACE W, VAR8_ORDERS O
+WHERE
+A.ID = O.Autoenterprise_ID AND
+W.ID = O.Work_Place_ID   AND
+A.LOCATION = 'Novosibirsk' 
+GROUP BY  A.NAME, A.Commission
+ORDER BY  3 desc, A.NAME
+;
+
+NAME              COMMISSION SUMMA ZAKA
+--------------------- ---------- ----------
+Akadem-Perevoz    2          164640
+AVTO-uslugi       3          136180
+Выбрано 2 строк. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

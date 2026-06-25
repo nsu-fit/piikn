@@ -1,0 +1,58 @@
+//Таксопарки
+(1, 'Voyazh', 8)
+(2, 'Sprint', 9
+(3, 'Aprel', 7 
+(4, 'Mirt', 4
+(5, 'Draiv', 4
+(6, 'Gorodok', 3
+
+//Машины
+(1, 1, 'Volga', 'Arehin', 'Sergei')
+(2, 1, 'Lada', 'Belov', 'Sergei')
+(3, 2, 'Volga', 'Voronin', 'Nikolai')
+(4, 3, 'Lada', 'Grigor'ev', 'Yurii')
+(5, 1, 'Volga', 'Zhukov', 'Vladimir')
+(6, 2, 'Lada', 'Zhukov', 'Aleksei')
+(7, 6, 'Volga', 'Kovalev', 'Sergei')
+(8, 3, 'Volga', 'Lebedev', 'Aleksandr')
+(9, 5, 'Hyundai', 'Nikitin', 'Anatolii')
+(10, 4, 'Toyota', 'Stognienko', 'Vladimir')
+(11, 2, 'Hyundai', 'Stubarev', 'Viktor')
+(12, 3, 'Lada', 'Fomin', 'Aleksei')
+(13, 3, 'Lada', 'Fomin', 'Nikolai')
+(14, 4, 'Lada', 'Hazhoyan', 'Margarita')
+(15, 6, 'Toyota', 'Horev', 'Aleksei')
+(16, 4, 'Toyota', 'Chernyi', 'Sergei')
+(17, 4, 'Hyundai', 'Chernyh', 'Gennadii')
+(18, 3, 'Hyundai', 'Chirkov', 'Denis')
+(19, 2, 'Toyota', 'Shabal'nikov', 'Igor')
+(20, 1, 'Lada', 'Sharnin', 'Andrei')
+(21, 5, 'Lada', 'Sharyi', 'Sergei')
+(22, 4, 'Lada', 'Yarutkin', 'Viktor')
+(23, 3, 'Toyota', 'Yasakov', 'Vladimir')
+
+//Зоны
+(1, 'Tolmachevo')
+(2, 'zh/d vokzal')
+(3, 'Rechnoi vokzal')
+(4, 'Shlyuz')
+(5, 'Verhnyaya')
+(6, 'Nizhnyaya')
+(7, 'El'tsovka')
+
+
+//Поездки
+(1, 1, '04.03.2005', 1, 2, 330)
+(2, 2, '28.04.2005', 4, 5, 60)
+(3, 3, '16.05.2005', 4, 6, 60)
+(4, 5, '14.05.2005', 6, 4, 50)
+(5, 6, '25.06.2005', 7, 6, 80)
+(6, 7, '02.07.2005', 7, 2, 210)
+(7, 8, '27.07.2005', 5, 5, 50)
+(8, 9, '15.08.2005', 6, 1, 320) 
+(9, 12, '19.09.2005', 2, 4, 220) 
+(10, 2, '07.08.2005', 5, 5, 40)
+(11, 3, '08.09.2005', 7, 3, 150) 
+(12, 5, '13.10.2005', 5, 3, 190)
+(13, 6, '18.06.2005', 6, 4, 70)
+(14, 12, '13.06.2005', 6, 4, 70) 

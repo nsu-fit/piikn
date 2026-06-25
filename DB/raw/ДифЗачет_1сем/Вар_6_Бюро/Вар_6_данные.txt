@@ -1,0 +1,43 @@
+ --Наниматель
+
+№	Наименование	Место расположения	Льгота, %
+
+1,	'Dialkon',           'Novosibirsk',      5
+2,	'Nejron Kompjukers', 'Moskva',           3
+3,	'NPK Konkakk',       'Novosibirsk',      3
+4,	'Kanbler',           'Sankt-Peterburg',  2
+5,	'Nonolet',           'Novosibirsk',      5
+
+--Бюро найма
+
+№.	Наименование	Адрес
+
+1,	'Artehk',	'Novosibirsk Metro Krasnyj prospekt'
+2,	'Ajron',	'Moskva Taganskaja 9'
+3,	'Gotti',	'Novosibirsk Ploschad Kondratjuka'
+4,	'Landor',	'Novosibirsk Mikrorajon Sch'
+
+--Профессии
+
+№	Наименование	Стоимость найма, руб. 
+
+1,   'Bujgalker',      6000
+2,   'Inzhener',       7000
+3,   'Programmist',    10000
+4,   'Povar',          4000
+5,   'Barmen',         2500
+
+--Трудовой договор
+
+№ договора	Дата	Наниматель	Бюро	Профессия	Количество
+
+1,   '15.10.2002',       1,        3,     2,	1
+2,   '18.10.2002',       3,        1,     4,	2
+3,   '03.12.2002',       1,        3,     1,	2
+4,   '25.11.2002',       2,        2,     5,	3
+5,   '02.12.2002',       1,        4,     4,	3
+6,   '27.10.2002',       4,        4,     1,	1
+7,   '03.12.2002',       5,        1,     4,	1
+8,   '09.11.2002',       1,        2,     3,	2
+9,   '20.11.2002',       4,        4,     3,	4
+10,  '27.12.2002',       1,        1,     3,	2

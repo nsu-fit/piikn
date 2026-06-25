@@ -1,0 +1,10 @@
+Kintsugi
+url: https://kintsugi-labs.apps.k8s.bcamp.pd15.sol.mtp
+username: strong_peacock
+password: 8ADc1T&tb6%y46Tf
+Pangolin
+database_host: 172.27.239.45
+database_port: 5432
+database_name: sakila_strong_peacock
+db_username: strong_peacock
+db_password: 8ADc1T&tb6%y46Tf

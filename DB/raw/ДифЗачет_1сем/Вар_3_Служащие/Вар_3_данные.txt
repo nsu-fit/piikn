@@ -1,0 +1,42 @@
+--Сотрудник
+
+№.	ФИО				Адрес
+1,	'Ivanov',' Sergej', 'Petrovich',	'Morskoj prospekt 12'
+2,	'Ustinov',' Oleg',' Viktorovich',	'Krasnyj prospekt 20'
+3,	'Kim',' Dmitrij', 'Konstantinovich',	'Ul Pirogova 20'
+4,	'Markova',' Ekaterina',' Andreevna',	'Ul Furmanova 12'
+5,	'Sidorov',' Aleksej',' Andreevich',	'Ul Geroev truda'
+6,	'Akopjan',' Vasilij',' Ilich ',	'Ul Gogolja'
+
+
+--Должность
+№	Наименование	Почасовая оплата(руб.)
+1,	'Bujgalker',	25
+2,	'Inzhener',	40
+3,	'Programmist',	60
+4,	'Povar',	20
+5,	'Barmen',	15
+6,	'Menedzher',	70
+
+--Место работы
+№.	Название организации	Адрес				Телефон		Отчисления в пенсионный фонд %
+1,	'Artehk',	'Novosibirsk Metro Krasnyj prospekt',	'23-23-45',	10
+2,	'Ajron',	'Moskva Taganskaja 9',          	'345-23-21',	15
+3,	'Gotti',	'Novosibirsk  Ploschad Kondratjuka',	'34-23-12',	12
+4,	'Landor',	'Novosibirsk  Mikrorajon Sch',  	'43-78-90',	10
+
+
+--Работа
+№ 	Сотрудник	Место работы	Дата назначения	Должность	Количество часов
+1,	1, 		1,		'22-May-02',	2,		8
+2,	2,		1,		'26-May-02',	1,		6
+3,	3,		2,		'10-Jun-02',	3,		8
+4,	4,		3,		'10-May-02',	4,		6
+5,	5,		3,		'20-Jun-02',	5,		10
+6,	6,		4,		'30-Jul-02',	6,		8
+7,	1,		1,		'29-Jul-02',	6,		8
+8,	3,		2,		'17-Dec-02',	6,		8
+
+
+
+

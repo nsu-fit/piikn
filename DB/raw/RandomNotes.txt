@@ -1,0 +1,4 @@
+1. “Just Use Postgres for Everything (How to reduce complexity and move faster)” — Stephan Schmidt
+   https://medium.com/redis-with-raphael-de-lio/can-postgres-replace-redis-as-a-cache-f6cba13386dc
+2. You Don't Need a Dedicated Cache Service - PostgreSQL as a Cache -- Martin Heinz
+   https://martinheinz.dev/blog/105

@@ -1,0 +1,36 @@
+
+
+CREATE TABLE VAR8_WORK_PLACE (
+ID       NUMBER(2) PRIMARY KEY,
+NAME     VARCHAR(100),
+ADDRESS  VARCHAR(100),
+DISCOUNT NUMBER(3) CONSTRAINT CK_DISCOUNT CHECK(DISCOUNT>=0 AND DISCOUNT<=100)
+);
+
+CREATE TABLE VAR8_AUTOENTERPRISE (
+ID         NUMBER(2) PRIMARY KEY,
+NAME       VARCHAR(100),
+Location   VARCHAR(100),
+Commission NUMBER(3) CONSTRAINT CK_Commission CHECK(Commission>=0 AND Commission<=100)
+);
+
+
+CREATE TABLE VAR8_Machinery (
+ID NUMBER(2) PRIMARY KEY,
+TYPE         VARCHAR(50),
+ADDRESS      VARCHAR(100),
+MaxQuantity  NUMBER(2) CONSTRAINT CK_MaxQuantity CHECK(MaxQuantity>=0 AND MaxQuantity<=50),
+Price             number(6) CONSTRAINT ck_Price CHECK (Price>=0)
+);
+
+
+CREATE TABLE VAR8_ORDERS (
+ORDER_NUMBER       NUMBER(4) PRIMARY KEY,
+ORDER_DATE         DATE,
+WORK_PLACE_ID      number(2) CONSTRAINT fk_Work_Place_ID REFERENCES VAR8_Work_Place (ID),
+Autoenterprise_ID  number(2) CONSTRAINT fk_Autoenterprise_ID REFERENCES VAR8_Autoenterprise(ID),
+Machinery_ID       number(2) CONSTRAINT fk_Machinery_ID REFERENCES VAR8_Machinery (ID),
+Machinery_Count    number(2),
+Payment            number(6) CONSTRAINT ck_Payment CHECK (Payment >=0)
+);
+

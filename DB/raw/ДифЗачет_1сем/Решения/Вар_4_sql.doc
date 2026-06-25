@@ -1,0 +1,184 @@
+
+create table Manager (
+   mgr_id               INTEGER                         not null,
+   mgr_first_name       VARCHAR2(30)                    not null,
+   mgr_middle_name      VARCHAR2(30)                    not null,
+   mgr_last_name        VARCHAR2(30)                    not null,
+   constraint PK_MANAGER primary key (mgr_id)
+)
+/
+create table Project (
+   prj_id               INTEGER                         not null,
+   prj_name             VARCHAR2(50)                    not null,
+   prj_start            DATE                            default sysdate not null,
+   prj_end              DATE                            default sysdate not null,
+   prj_mgr_id           INTEGER,
+   constraint PK_PROJECT primary key (prj_id),
+   constraint FK_PROJECT_REFERENCE_MANAGER foreign key (prj_mgr_id)
+         references Manager (mgr_id),
+   constraint prj_date_check check(prj_start <= prj_end)
+)
+/
+
+create table Task (
+   tsk_id               INTEGER                         not null,
+   tsk_name             VARCHAR2(50)                    not null,
+   tsk_specification    VARCHAR2(255)                   not null,
+   tsk_start            DATE                            default sysdate,
+   tsk_end              DATE                            default sysdate,
+   tsk_percent_complete INTEGER                         default 0 constraint tsk_pcomplete check (tsk_percent_complete between 0 and 100),
+   tsk_prj_id           INTEGER,
+   constraint PK_TASK primary key (tsk_id),
+   constraint FK_TASK_REFERENCE_PROJECT foreign key (tsk_prj_id)
+         references Project (prj_id),
+   constraint tsk_date_check check(tsk_start <= tsk_end)
+)
+/
+
+create table Programmer (
+   prg_id               INTEGER                         not null,
+   prg_first_name       VARCHAR2(30)                    not null,
+   prg_middle_name      VARCHAR2(30)                    not null,
+   prg_last_name        VARCHAR2(30)                    not null,
+   prg_main_skill       VARCHAR2(50)                    not null,
+   constraint PK_PROGRAMMER primary key (prg_id)
+)
+/
+
+create table TaskAssignment (
+   ta_tsk_id            INTEGER                         not null,
+   ta_prg_id            INTEGER                         not null,
+   ta_load_percent      INTEGER                         default 0 constraint ta_lpercent check (ta_load_percent between 0 and 100),
+   constraint PK_TASKASSIGNMENT primary key (ta_tsk_id, ta_prg_id),
+   constraint FK_TASKASSI_REFERENCE_PROGRAMM foreign key (ta_prg_id)
+         references Programmer (prg_id),
+   constraint FK_TASKASSI_REFERENCE_TASK foreign key (ta_tsk_id)
+         references Task (tsk_id)
+)
+
+insert into Manager values (1,'╚трэют','╧хЄЁ','╤хЁуххтшў')
+insert into Manager values (2,'╬Ёръєыют','═шъюырщ','╚трэютшў')
+insert into Manager values (3,'╧хЄЁют','╚трэ','═шъюырхтшў')
+insert into Manager values (4,'═шъюырхт','╤хьхэ','┬шъЄюЁютшў')
+
+
+insert into Project values (1, 'Альфа 1', to_date('15.12.2002','DD.MM.YYYY'), to_date('25.10.2003','DD.MM.YYYY'), 1)
+/
+insert into Project values (2, 'МобайлСервис', to_date('18.11.2002','DD.MM.YYYY'), to_date('04.07.2003','DD.MM.YYYY'), 2)
+/
+insert into Project values (3, 'Альфа 1 Веб', to_date('25.12.2002','DD.MM.YYYY'), to_date('05.09.2003','DD.MM.YYYY'), 1)
+/
+insert into Project values (4, 'ТорговыйЦентр.ру', to_date('18.12.2002','DD.MM.YYYY'), to_date('08.12.2003','DD.MM.YYYY'), 3)
+/
+insert into Project values (5, 'СибирьПортал', to_date('15.07.2002','DD.MM.YYYY'), to_date('18.12.2002','DD.MM.YYYY'), 2)
+/
+
+insert into Task values (1, 'Требования', 'Согласовать и описать требования', to_date('15.12.2002','DD.MM.YYYY'), to_date('25.12.2002','DD.MM.YYYY'), 80, 1)
+/
+insert into Task values (2, 'Проект БД', 'Разработать структуру БД', to_date('19.12.2002','DD.MM.YYYY'), to_date('15.01.2003','DD.MM.YYYY'), 13, 1)
+/                        
+insert into Task values (3, 'Интерфейсы', 'Разработать описание интерфейсов', to_date('19.12.2002','DD.MM.YYYY'), to_date('15.01.2003','DD.MM.YYYY'), 5, 1)
+/
+insert into Task values (4, 'Модуль 1', 'Реализовать модуль 1', to_date('15.01.2003','DD.MM.YYYY'), to_date('25.02.2003','DD.MM.YYYY'), 0, 1)
+/
+insert into Task values (5, 'Модуль 2', 'Реализовать модуль 2', to_date('25.01.2003','DD.MM.YYYY'), to_date('15.08.2003','DD.MM.YYYY'), 0, 1)
+/
+insert into Task values (6, 'Перепроектирование', 'Перепроектировать базу данных', to_date('18.12.2002','DD.MM.YYYY'), to_date('18.01.2003','DD.MM.YYYY'), 25, 4)
+/                            
+insert into Task values (7, 'Интеграция', 'Интегрировать все модули', to_date('15.10.2002','DD.MM.YYYY'), to_date('15.11.2002','DD.MM.YYYY'), 100, 5)
+/
+insert into Task values (8, 'Комплексное тестирование', 'Протестировать систему оплностью', to_date('15.11.2002','DD.MM.YYYY'), to_date('15.12.2002','DD.MM.YYYY'), 100, 5)
+/
+
+insert into Programmer values (1, 'Павел', 'Семенович', 'Сидоров', 'C++')
+/                                  
+insert into Programmer values (2, 'Николай', 'Сергеевич', 'Антонов', 'java')
+/
+insert into Programmer values (3, 'Виталий', 'Игнатьевич', 'Умнов', 'web')
+/
+insert into Programmer values (4, 'Семен', 'Валерьевич', 'Ларинов', 'C++')
+/
+insert into Programmer values (5, 'Петр', 'Витальевич', 'Тредов', 'C++')
+/
+insert into Programmer values (6, 'Иван', 'Петрович', 'Хаба', 'php')
+/
+insert into Programmer values (7, 'Никита', 'Сергеевич', 'Сидоров', 'java')
+/
+
+insert into TaskAssignment values (1, 1, 60)
+/                                  
+insert into TaskAssignment values (6, 1, 40)
+/                                  
+insert into TaskAssignment values (4, 4, 100)
+/                                  
+insert into TaskAssignment values (3, 5, 100)
+/                                  
+insert into TaskAssignment values (2, 5, 100)
+/                                  
+insert into TaskAssignment values (5, 2, 100)
+/                                  
+insert into TaskAssignment values (2, 1, 30)
+/                                  
+insert into TaskAssignment values (6, 5, 10)
+/                                  
+
+rem query 1
+select distinct prg_last_name || ' ' || prg_middle_name || ' ' || prg_first_name  as "Programmer Name"
+from Programmer, Manager, Project, Task, TaskAssignment
+where (mgr_first_name = 'Петр' and mgr_middle_name = 'Сергеевич' and mgr_last_name = 'Иванов') and    
+       prj_mgr_id = mgr_id and 
+       prj_id = tsk_prj_id and 
+       tsk_id = ta_tsk_id and 
+       ta_prg_id = prg_id and 
+       prg_main_skill = 'C++'
+order by 1
+/
+
+
+rem query 2
+select prj_name as "Project", tsk_name as "Task", ta_load_percent || ' %' as "Load"
+from Programmer, TaskAssignment, Task, Project  
+where (prg_first_name = '╤шфюЁют' and prg_middle_name = '╧ртхы' and prg_last_name = '╤хьхэютшў') and    
+       tsk_id = ta_tsk_id and 
+       ta_prg_id = prg_id and
+       to_date('20.12.2002','DD.MM.YYYY') >= tsk_start and 
+       to_date('20.12.2002','DD.MM.YYYY') <= tsk_end and 
+       prj_id = tsk_prj_id
+order by 1 asc, 3 desc, 2 asc/
+ProjectTaskLoad└ы№Їр 1╥Ёхсютрэш 60 %└ы№Їр 1╧ЁюхъЄ ┴─30 %╥юЁуют√щ╓хэЄЁ.Ёє╧хЁхяЁюхъЄшЁютрэшх40 %3 rows 
+rem query 3
+select min(prj_name) as "Project", 
+       min(prj_start) as "Planned Project Start",
+       min(prj_end) as "Planned Project End", 
+       (min(prj_end) - min(prj_start))*8 || ' h' as "Planned Project Effort",
+       sum((tsk_end - tsk_start)*8) || ' h' as "Actual Project Effort"
+from Manager, Project, Task
+where (mgr_first_name = '╬Ёръєыют' and mgr_middle_name = '═шъюырщ' and mgr_last_name = '╚трэютшў') and    
+       prj_mgr_id = mgr_id and 
+       not exists (select tsk_id from Task where tsk_prj_id = prj_id and not(tsk_percent_complete = 100)) and
+       prj_start >= to_date('01.01.2002','DD.MM.YYYY') and 
+       prj_end <= to_date('31.12.2002','DD.MM.YYYY') and 
+       prj_id = tsk_prj_id
+group by prj_id
+order by 4 desc
+/
+ojectPlanned Project StartPlanned Project EndPlanned Project EffortActual Project Effort╤шсшЁ№╧юЁЄры15.07.0218.12.021248 h488 h1 rows ааа
+rem query 4
+select min(prj_name) as "Project", 
+       (min(prj_end) - min(prj_start))*8 || ' h' as "Planned Project Effort",
+       min(mgr_last_name) || ' ' || min(mgr_middle_name) || ' ' || min(mgr_first_name) as "Manager",
+       count(distinct ta_prg_id) as "Number Of Programmers"
+from Manager, Project, Task, TaskAssignment
+where prj_mgr_id = mgr_id and 
+      prj_id = tsk_prj_id and 
+      tsk_id = ta_tsk_id
+group by prj_id, mgr_id
+order by 1
+/
+ProjectPlanned Project EffortManagerNumber Of Programmers└ы№Їр 12512 h╤хЁуххтшў ╧хЄЁ ╚трэют4╥юЁуют√щ╓хэЄЁ.Ёє1896 h═шъюырхтшў ╚трэ ╧хЄЁют2
+rem query 5
+update Task 
+set tsk_percent_complete = 100 
+where tsk_prj_id in (select prj_id from Project where prj_end <= to_date('31.12.2003','DD.MM.YYYY') )
+/
+
