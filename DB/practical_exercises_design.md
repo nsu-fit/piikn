@@ -232,7 +232,7 @@ semester-5/practice-07-dml-select/
 
 Основная линия: Postgres Pro demo database в Taidon/sqlrs.
 
-Первые три недели не проверяют самостоятельное написание SQL. Студенты запускают готовые обзорные и диагностические запросы, читают результаты, строят словарь данных и ER-фрагменты. Практика 5.5 также остается без самостоятельного SQL: студенты работают с реляционной алгеброй на уровне выражений и табличных результатов. Это нужно, чтобы практика соответствовала порядку лекций: DDL, прикладной `SELECT` и DML появляются в заданиях только после соответствующих лекций. В DDL-практике до DML-лекции проверочные `INSERT` выдаются преподавателем как готовый сценарий.
+Первые три недели не проверяют самостоятельное написание SQL. Студенты запускают готовые обзорные и диагностические запросы, читают результаты, строят словарь данных и ER-фрагменты. Практика 5.5 также остается без самостоятельного SQL: студенты работают с реляционной алгеброй на уровне выражений и табличных результатов. Это нужно, чтобы практика соответствовала порядку лекций: прикладной `SELECT`, DML и минимальный DDL появляются в заданиях только после соответствующих лекций.
 
 | Блок | Типовые упражнения | Данные |
 |---|---|---|
@@ -240,9 +240,8 @@ semester-5/practice-07-dml-select/
 | ER-реконструкция | восстановить фрагмент бронирование - билет - сегмент - рейс | flights 3 months |
 | Реляционная алгебра | построить выражение, вручную получить результат на малых отношениях, сравнить эквивалентные формы | малые табличные фрагменты flights/course_lab |
 | Базовый SQL | отчеты по маршрутам, аэропортам, статусам, классам обслуживания | flights 3 months, hidden 6 months |
-| DDL | учебный фрагмент заказов или таблица расширения, готовые проверки ограничений | `course_lab` |
 | DML на основе SELECT | перенос данных, корректирующие обновления, мягкое удаление, `RETURNING`, инварианты | `course_lab` |
-| Расширенный SQL | CTE, окна, задержки, рейтинги, маршруты с пересадками | flights 3/6 months |
+| DDL | учебный фрагмент заказов или таблица расширения, готовые проверки ограничений | `course_lab` |
 | Нормализация | денормализованный manifest по билетам и рейсам | `course_lab.denormalized_ticket_manifest` |
 | Транзакции | бронирование места, изменение баланса, concurrent check-in | `course_lab.account_ledger` или `course_lab.seat_reservation_lab` |
 | Безопасный SQL | исправление unsafe filter/order/search snippets | `course_lab` + псевдокод |
@@ -260,11 +259,12 @@ semester-5/practice-07-dml-select/
 | WAL/recovery | backup/restore, smoke checks, recovery notes | локальный контур |
 | Репликация | primary/replica, lag, read-only запросы | контейнерный контур |
 | Администрирование | роли, config, health checks, slow query diagnostics | локальный контур |
+| Advanced SQL в приложении | keyset pagination, таблица как очередь, REST-idempotency | `course_lab` + мини-приложение |
 | Миграции | expand-contract, locks, backfill, forward-fix | `course_lab` |
 | Partitioning | event_log, retention, BRIN | `course_lab.event_log` |
-| JSONB/модели | normalized vs JSONB vs object reference | `course_lab.documents` |
+| JSONB/модели и access policies | normalized vs JSONB vs object reference, RBAC/RLS sketch | `course_lab.documents` |
 | Граф | recursive CTE, adjacency list, materialized path | `course_lab.org_units` |
-| Аналитика | star schema, materialized views, refresh | flights + `course_lab.event_log` |
+| Аналитика | star schema, window functions, materialized views, refresh | flights + `course_lab.event_log` |
 | Поиск/AI | full-text, optional pgvector prototype | `course_lab.documents` |
 
 ## 10. Альтернативные базы
