@@ -1,0 +1,8 @@
+# Практика 5.1 не использует индивидуальные варианты.
+# Все студенты выполняют одинаковые smoke-задания, потому что цель занятия -
+# проверить доступ к среде и единый формат сдачи.
+
+exercise: practice_05_01
+variant_policy: none
+visible_database: postgrespro_demo_2025_09_01_3m
+hidden_database_compatible: true

@@ -1,0 +1,39 @@
+exercise: practice_05_03
+inherits_variant_from: practice_05_02
+visible_database: postgrespro_demo_2025_09_01_3m
+hidden_database_compatible: true
+
+minimum_relationship_checks: 4
+minimum_missing_constraint_checks: 2
+
+recommended_fragments:
+  booking_chain:
+    entities:
+      - bookings
+      - tickets
+      - segments
+      - flights
+    focus:
+      - "1 booking -> many tickets"
+      - "1 ticket -> many flight segments"
+      - "1 flight -> many segments"
+  route_chain:
+    entities:
+      - routes
+      - flights
+      - airports_data
+      - airplanes_data
+    focus:
+      - "route_no + validity -> flights"
+      - "route departure/arrival airports"
+      - "airplane model used by route"
+  boarding_chain:
+    entities:
+      - boarding_passes
+      - segments
+      - flights
+      - seats
+    focus:
+      - "boarding pass belongs to ticket segment"
+      - "unique seat per flight"
+      - "seat configuration is not fully enforced by schema"

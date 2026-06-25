@@ -7,6 +7,7 @@
 - `DB/updated_database_course_program.md` - общая программа курса.
 - `DB/practical_assessment_methodology.md` - методика оценки практической части.
 - `DB/practical_exercises_design.md` - архитектура наборов данных, вариантов заданий и проверки упражнений.
+- `DB/exercises/` - конкретные выдаваемые задания, варианты и спецификации проверки.
 - `DB/lecture_plans/` - подробные планы лекций.
 
 ## Принятые обозначения

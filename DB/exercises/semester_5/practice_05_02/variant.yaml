@@ -1,0 +1,72 @@
+exercise: practice_05_02
+visible_database: postgrespro_demo_2025_09_01_3m
+hidden_database_compatible: true
+
+variant_policy:
+  assignment: by_student_number_modulo
+  parameter_seed: student_number
+  language_for_translated_fields: en
+
+variants:
+  A:
+    title: "Бронирование, билеты и сегменты"
+    tables:
+      - bookings
+      - tickets
+      - segments
+    required_cardinality_checks:
+      - tickets_per_booking
+      - segments_per_ticket
+      - price_sum_per_booking
+  B:
+    title: "Рейсы, маршруты и расписание"
+    tables:
+      - flights
+      - routes
+      - timetable
+    required_cardinality_checks:
+      - flights_per_route
+      - routes_per_airport_pair
+      - status_distribution
+  C:
+    title: "Аэропорты, самолеты и места"
+    tables:
+      - airports_data
+      - airplanes_data
+      - seats
+      - routes
+    required_cardinality_checks:
+      - seats_per_airplane
+      - airports_per_country
+      - routes_per_airplane
+  D:
+    title: "Посадочные талоны и выполнение рейсов"
+    tables:
+      - boarding_passes
+      - segments
+      - flights
+      - seats
+    required_cardinality_checks:
+      - boarding_passes_per_flight
+      - segments_per_flight
+      - seats_used_per_flight
+
+parameters:
+  countries:
+    - "Russia"
+    - "China"
+    - "United States"
+    - "Germany"
+    - "Turkey"
+  fare_conditions:
+    - "Economy"
+    - "Comfort"
+    - "Business"
+  flight_statuses:
+    - "Scheduled"
+    - "On Time"
+    - "Delayed"
+    - "Boarding"
+    - "Departed"
+    - "Arrived"
+    - "Cancelled"

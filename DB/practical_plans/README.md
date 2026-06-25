@@ -2,6 +2,8 @@
 
 Этот каталог дополняет файлы `DB/practical_classes_plan.md`, `DB/practical_assessment_methodology.md`, `DB/practical_exercises_design.md` и `DB/updated_database_course_program.md`.
 
+Конкретные выдаваемые задания, варианты и спецификации проверки находятся в `DB/exercises/`.
+
 Общая сетка:
 
 - 5-й семестр: 16 практических занятий, фокус на применении СУБД, чтении схем, SQL, нормализации, транзакциях и безопасности в учебной среде Taidon/sqlrs.
