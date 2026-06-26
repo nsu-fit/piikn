@@ -1,0 +1,47 @@
+variant_template:
+  select_part:
+    task_01:
+      type: filter_sort_limit
+      dataset: bookings.bookings
+      parameters:
+        min_total_amount: [50000, 100000, 150000]
+    task_02:
+      type: route_filter
+      dataset: bookings.routes
+      parameters:
+        departure_airport: [OVB, DME, LED, SVX]
+        arrival_airport: [DME, LED, OVB, KZN]
+    task_03:
+      type: join_chain
+      required_tables:
+        - tickets
+        - segments
+        - flights
+    task_04:
+      type: aggregation
+      group_by_options:
+        - fare_conditions
+        - route_no
+        - status
+    task_05:
+      type: exists_or_not_exists
+      allowed_patterns:
+        - EXISTS
+        - NOT EXISTS
+  dml_part:
+    table: course_lab.order_queue
+    required_steps:
+      - preselect
+      - update_or_insert
+      - returning_or_check_select
+  explanation_part:
+    wrong_fragments:
+      - accidental_cross_join
+      - left_join_filtered_in_where
+      - update_without_precise_predicate
+rules:
+  time_limit_minutes: 80
+  ddl_allowed: false
+  cte_allowed: false
+  window_functions_allowed: false
+  recursive_queries_allowed: false

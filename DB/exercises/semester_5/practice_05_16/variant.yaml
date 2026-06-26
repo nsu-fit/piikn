@@ -1,0 +1,20 @@
+portfolio_contract:
+  required_index: index.md
+  required_selection: selected_artifacts.md
+  min_selected_artifacts: 3
+  max_selected_artifacts: 5
+  required_topics:
+    - schema_analysis
+    - er_fragment
+    - basic_select
+    - dml
+    - ddl_constraints
+    - normalization
+    - view_or_function
+    - transactions
+    - sql_security
+rules:
+  defense_mode: oral
+  llm_allowed_during_defense: false
+  runnable_scenario_required: true
+  critical_security_errors_block_credit: true

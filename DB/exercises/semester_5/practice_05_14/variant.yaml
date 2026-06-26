@@ -1,0 +1,16 @@
+default_variant:
+  status_payload: "' OR true --"
+  sort_column_payload: "total_amount; DROP TABLE course_lab.order_queue; --"
+  tenant_document_id: 42
+  allowed_sort_columns:
+    - created_at
+    - total_amount
+    - status
+  allowed_sort_directions:
+    - asc
+    - desc
+rules:
+  require_parameterized_values: true
+  require_identifier_whitelist: true
+  require_least_privilege_roles: true
+  distinguish_injection_and_authorization: true

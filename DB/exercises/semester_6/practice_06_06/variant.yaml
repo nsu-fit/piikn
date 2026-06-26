@@ -1,0 +1,12 @@
+default_variant:
+  source_database: db_course
+  restore_database: db_course_restore
+  required_tables:
+    - app.events
+    - app.orders
+    - app.documents
+  backup_tool: pg_dump
+rules:
+  restore_must_not_overwrite_source: true
+  require_smoke_checks: true
+  require_risk_section: true

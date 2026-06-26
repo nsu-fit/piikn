@@ -1,0 +1,15 @@
+default_variant:
+  scenario: order_creation_idempotency
+  allowed_scenarios:
+    - order_creation_idempotency
+    - worker_queue
+    - keyset_pagination
+  tables:
+    orders: app.orders
+    events: app.events
+    documents: app.documents
+rules:
+  require_transaction_boundary: true
+  require_parameterization_notes: true
+  require_three_tests: true
+  n_plus_one_discussion_required: true

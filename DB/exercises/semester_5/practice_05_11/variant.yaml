@@ -1,0 +1,17 @@
+default_variant:
+  source_table: course_lab.flight_sales_flat
+  required_tables:
+    - course_lab.norm_bookings
+    - course_lab.norm_tickets
+    - course_lab.norm_flights
+    - course_lab.norm_segments
+  required_checks:
+    - q01_row_count_original
+    - q02_row_count_reconstructed
+    - q03_original_minus_reconstructed
+    - q04_reconstructed_minus_original
+rules:
+  source_table_read_only: true
+  require_primary_keys: true
+  require_foreign_keys: true
+  require_except_lossless_check: true

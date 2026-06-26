@@ -1,0 +1,12 @@
+default_variant:
+  measured_tables:
+    - app.events
+    - app.orders
+    - app.documents
+  baseline_queries:
+    - q06_orders_by_tenant_status
+    - q07_documents_by_metadata_category
+rules:
+  require_explain_analyze_buffers: true
+  require_two_index_hypotheses: true
+  create_indexes_in_this_practice: false

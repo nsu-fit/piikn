@@ -1,0 +1,37 @@
+default_variant:
+  departure_airport: OVB
+  arrival_airport: DME
+  min_total_amount: 100000
+  status: Scheduled
+variant_pool:
+  departure_airport:
+    - OVB
+    - DME
+    - LED
+    - SVX
+  arrival_airport:
+    - DME
+    - LED
+    - OVB
+    - KZN
+  min_total_amount:
+    - 50000
+    - 100000
+    - 150000
+  status:
+    - Scheduled
+    - Arrived
+    - Departed
+rules:
+  forbidden_hardcoded_columns:
+    - ticket_no
+    - book_ref
+    - flight_id
+  required_query_labels:
+    - q01_recent_bookings
+    - q02_route_flights
+    - q03_ticket_segments
+    - q04_fare_summary
+    - q05_route_revenue
+    - q06_airports_without_departure_routes
+    - q07_bookings_ticket_count

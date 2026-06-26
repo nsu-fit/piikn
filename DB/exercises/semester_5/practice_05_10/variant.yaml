@@ -1,0 +1,15 @@
+default_variant:
+  source_table: course_lab.flight_sales_flat
+  candidate_key:
+    - ticket_no
+    - flight_id
+  required_checks:
+    - q01_flight_conflicts
+    - q02_ticket_conflicts
+    - q03_duplicate_segments
+    - q04_booking_total_delta
+rules:
+  sql_changes_allowed: false
+  dependencies_must_be_domain_based: true
+  min_functional_dependencies: 6
+  min_anomalies: 3

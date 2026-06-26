@@ -63,3 +63,35 @@ semester-5/practice-05-01/
 - `semester_5/practice_05_01` - вход в Taidon/sqlrs и запуск готового smoke-сценария.
 - `semester_5/practice_05_02` - анализ учебного датасета и словарь данных по готовому профилю схемы.
 - `semester_5/practice_05_03` - восстановление ER-фрагмента по схеме, данным и готовым диагностическим запросам.
+- `semester_5/practice_05_04` - контрольная 1: анализ схемы и предметной области без самостоятельного SQL.
+- `semester_5/practice_05_05` - реляционная алгебра на малых отношениях без самостоятельного SQL.
+- `semester_5/practice_05_06` - базовый `SELECT` на учебном представлении демобазы.
+- `semester_5/practice_05_07` - DML-сценарии на основе предварительного `SELECT`.
+- `semester_5/practice_05_08` - контрольная 2: базовый `SELECT` и DML.
+- `semester_5/practice_05_09` - минимальный DDL и ограничения.
+- `semester_5/practice_05_10` - функциональные зависимости и аномалии на денормализованной таблице.
+- `semester_5/practice_05_11` - нормализация учебной схемы и проверка lossless join.
+- `semester_5/practice_05_12` - представления и простая функция для повторяемых проверок.
+- `semester_5/practice_05_13` - транзакционные эксперименты в двух сессиях.
+- `semester_5/practice_05_14` - безопасный SQL из приложения.
+- `semester_5/practice_05_15` - контрольная 3: нормализация, транзакции и безопасность.
+- `semester_5/practice_05_16` - защита SQL-портфолио.
+
+### 6-й семестр
+
+- `semester_6/practice_06_01` - локальное или контейнерное развертывание PostgreSQL.
+- `semester_6/practice_06_02` - устройство кластера, системные каталоги и storage/MVCC-наблюдения.
+- `semester_6/practice_06_03` - физическое хранение, размеры relation и baseline-планы.
+- `semester_6/practice_06_04` - специализированные индексы и JSONB.
+- `semester_6/practice_06_05` - контрольная: оптимизационный практикум.
+- `semester_6/practice_06_06` - WAL, checkpoint и backup/restore runbook.
+- `semester_6/practice_06_07` - репликация и эксплуатационные риски.
+- `semester_6/practice_06_08` - эксплуатационный checklist.
+- `semester_6/practice_06_09` - интеграция PostgreSQL с приложением и advanced SQL-паттерны.
+- `semester_6/practice_06_10` - миграция схемы или design slice.
+- `semester_6/practice_06_11` - partitioning и retention.
+- `semester_6/practice_06_12` - реляционное хранение, JSONB и access policies.
+- `semester_6/practice_06_13` - графоподобные данные и architecture trade-off review.
+- `semester_6/practice_06_14` - аналитическая витрина на PostgreSQL.
+- `semester_6/practice_06_15` - поиск и AI-сценарии.
+- `semester_6/practice_06_16` - финальная защита проектного артефакта.

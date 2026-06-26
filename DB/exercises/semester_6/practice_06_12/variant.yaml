@@ -1,0 +1,9 @@
+default_variant:
+  data_class: document_attributes
+  required_options: 3
+  required_access_policy: true
+  required_non_goals: true
+rules:
+  technology_fashion_not_argument: true
+  require_authoritative_source: true
+  require_operational_implications: true

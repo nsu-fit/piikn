@@ -1,0 +1,14 @@
+default_variant:
+  source_tables:
+    - app.orders
+    - app.events
+  required_queries:
+    - q01_orders_by_day_status
+    - q02_running_total_window
+    - q03_events_by_day_type
+    - q04_data_quality_late_or_duplicate_events
+rules:
+  require_fact_dimension_split: true
+  require_window_query: true
+  require_materialized_view_policy: true
+  require_data_quality_notes: true

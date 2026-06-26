@@ -1,0 +1,18 @@
+variant_template:
+  query_classes:
+    - orders_by_tenant_status_date
+    - documents_by_jsonb_category
+    - events_by_time_range_and_type
+    - aggregate_by_tenant_and_day
+  allowed_changes:
+    - create_index
+    - rewrite_query
+    - expression_index
+    - partial_index
+    - materialized_precomputation
+rules:
+  time_limit_minutes: 80
+  llm_allowed: false
+  require_explain_analyze_buffers: true
+  one_primary_change_only: true
+  max_score: 10

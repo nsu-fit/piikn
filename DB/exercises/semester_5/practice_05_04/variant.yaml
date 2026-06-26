@@ -1,0 +1,35 @@
+variants:
+  ticket_flow:
+    tables:
+      - bookings
+      - tickets
+      - segments
+      - flights
+    diagnostics:
+      - tickets_without_booking
+      - segments_per_ticket_sample
+      - segment_amount_by_fare_class
+  boarding_flow:
+    tables:
+      - flights
+      - boarding_passes
+      - seats
+      - airplanes_data
+    diagnostics:
+      - boarding_pass_without_segment
+      - duplicate_seat_on_flight
+      - boarding_pass_seat_not_in_airplane
+  route_flow:
+    tables:
+      - routes
+      - airports_data
+      - flights
+      - segments
+    diagnostics:
+      - routes_without_airport
+      - flights_per_route_sample
+      - suspicious_route_same_airport
+rules:
+  sql_authoring_required: false
+  individual_work: true
+  time_limit_minutes: 80

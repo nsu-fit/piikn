@@ -1,0 +1,30 @@
+variant_template:
+  normalization_part:
+    flat_table_examples:
+      - order_delivery_flat
+      - subscription_billing_flat
+      - course_enrollment_flat
+    required_items:
+      - functional_dependencies
+      - candidate_key
+      - update_anomaly
+      - deletion_anomaly
+      - decomposition
+      - lossless_check
+  transaction_part:
+    scenarios:
+      - non_repeatable_read
+      - lost_update
+      - deadlock
+      - serialization_failure
+  security_part:
+    snippets:
+      - unsafe_value_concatenation
+      - unsafe_dynamic_order_by
+      - missing_tenant_predicate
+rules:
+  time_limit_minutes: 80
+  llm_allowed: false
+  internet_allowed: official_docs_only
+  ddl_required: true
+  transaction_execution_required: false

@@ -1,0 +1,11 @@
+default_variant:
+  tenant_id: 1
+  order_status: created
+  document_category: billing
+  required_hypotheses:
+    - btree_or_partial_orders
+    - jsonb_expression_or_gin_documents
+rules:
+  require_before_after_plans: true
+  require_index_tradeoff: true
+  hidden_check_may_change_tenant_or_category: true

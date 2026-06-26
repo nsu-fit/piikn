@@ -1,0 +1,12 @@
+default_variant:
+  table: app.orders
+  new_column: external_reference
+  uniqueness_scope:
+    - tenant_id
+    - external_reference
+  checkpoint_artifact: true
+rules:
+  destructive_changes_forbidden_without_contract_plan: true
+  require_readers_writers_list: true
+  require_test_data_and_checks: true
+  require_rollback_or_forward_fix: true

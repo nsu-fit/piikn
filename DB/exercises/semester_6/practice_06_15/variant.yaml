@@ -1,0 +1,12 @@
+default_variant:
+  source_table: app.documents
+  text_columns:
+    - title
+    - body
+  tenant_boundary: tenant_id
+  required_test_queries: 3
+rules:
+  require_source_vs_index_distinction: true
+  require_quality_notes: true
+  vector_search_optional: true
+  require_security_notes: true

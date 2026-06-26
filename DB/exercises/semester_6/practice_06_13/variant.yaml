@@ -1,0 +1,12 @@
+default_variant:
+  scenario: task_dependencies
+  required_alternatives:
+    - adjacency_list_recursive_cte
+    - materialized_path_or_closure_table
+    - graph_database
+  checkpoint_artifact: true
+rules:
+  require_adr: true
+  require_short_defense: true
+  full_pair_reserved_for_control: false
+  graph_db_not_default_answer: true

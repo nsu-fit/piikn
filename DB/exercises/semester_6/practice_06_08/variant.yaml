@@ -1,0 +1,16 @@
+default_variant:
+  checkpoint_options:
+    - backup_restore
+    - replication_lag
+    - slow_query_baseline
+    - roles_and_grants
+  required_check_queries:
+    - q01_current_user_and_database
+    - q02_table_counts
+    - q03_slow_query_candidate
+    - q04_role_visibility
+    - q05_health_check
+rules:
+  checkpoint_artifact: true
+  full_pair_reserved_for_control: false
+  require_open_risks: true

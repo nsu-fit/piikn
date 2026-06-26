@@ -1,0 +1,19 @@
+project_contract:
+  allowed_project_types:
+    - query_or_index_optimization
+    - schema_migration
+    - backup_restore_runbook
+    - partitioning_retention
+    - storage_model_adr
+    - search_design_slice
+    - data_access_layer_slice
+  required_files:
+    - README.md
+    - demo.md
+    - risks.md
+    - links.md
+rules:
+  defense_mode: oral
+  llm_allowed_during_defense: false
+  require_reproducible_demo_or_design_walkthrough: true
+  require_theory_links: 2

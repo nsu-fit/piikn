@@ -1,0 +1,16 @@
+default_variant:
+  work_schema: course_lab
+  required_views:
+    - course_lab.v_route_revenue
+    - course_lab.v_booking_quality
+  required_function: course_lab.booking_total_delta(text)
+  required_usage_queries:
+    - q01_top_routes
+    - q02_booking_mismatches
+    - q03_function_existing_booking
+    - q04_function_missing_booking
+    - q05_view_reuse
+rules:
+  materialized_view_required: false
+  data_modification_allowed: false
+  require_schema_qualified_names: true

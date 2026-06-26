@@ -1,0 +1,16 @@
+default_variant:
+  min_postgresql_version: 16
+  database: db_course
+  schema: app
+  roles:
+    owner: db_course_owner
+    application: db_course_app
+    readonly: db_course_readonly
+  required_tables:
+    - app.events
+    - app.orders
+    - app.documents
+rules:
+  superuser_for_app_forbidden: true
+  destructive_cleanup_must_be_marked: true
+  screenshots_not_primary_evidence: true

@@ -1,0 +1,13 @@
+default_variant:
+  source_table: app.events
+  partition_key: created_at
+  retention_days: 90
+  partition_granularity: month
+  hot_query_predicates:
+    - tenant_id
+    - event_type
+    - created_at_range
+rules:
+  require_retention_procedure: true
+  require_adr_alternatives: 2
+  require_partition_pruning_query: true

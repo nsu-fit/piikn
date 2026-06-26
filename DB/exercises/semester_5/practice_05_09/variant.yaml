@@ -1,0 +1,31 @@
+schema_contract:
+  schema: course_lab
+  tables:
+    - issue_projects
+    - issue_tickets
+    - issue_comments
+required_constraints:
+  issue_projects:
+    - primary_key_project_id
+    - unique_code
+    - check_code_format
+    - not_null_name
+  issue_tickets:
+    - primary_key_ticket_id
+    - foreign_key_project_id
+    - check_status
+    - check_priority_between_1_and_5
+    - unique_external_key
+    - check_closed_at_matches_status
+  issue_comments:
+    - primary_key_comment_id
+    - foreign_key_ticket_id
+    - not_null_author
+    - not_null_body
+rules:
+  migration_depth: minimal
+  advanced_migration_topics_out_of_scope:
+    - online_schema_change
+    - lock_impact_analysis
+    - rollback_strategy
+    - expand_contract

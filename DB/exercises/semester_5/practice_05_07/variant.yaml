@@ -1,0 +1,21 @@
+default_variant:
+  min_total_amount: 100000
+  stale_before: "2026-01-01 00:00:00"
+  processing_timestamp: "2026-02-04 09:00:00"
+  processing_status: processing
+  audit_action: picked_for_processing
+variant_pool:
+  min_total_amount:
+    - 75000
+    - 100000
+    - 150000
+  stale_before:
+    - "2026-01-01 00:00:00"
+    - "2026-01-15 00:00:00"
+  processing_timestamp:
+    - "2026-02-04 09:00:00"
+    - "2026-02-05 09:00:00"
+rules:
+  use_preselect_before_update: true
+  require_returning: true
+  audit_must_be_idempotent: true

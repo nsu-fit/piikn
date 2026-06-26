@@ -1,0 +1,12 @@
+default_variant:
+  account_id: 1
+  first_delta: 100
+  second_delta: 50
+  shift_date: "2026-03-01"
+  doctor_a: 1
+  doctor_b: 2
+rules:
+  require_two_sessions: true
+  require_explicit_begin_commit_or_rollback: true
+  mvcc_internals_required: false
+  min_scenarios: 2

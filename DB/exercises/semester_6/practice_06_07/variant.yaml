@@ -1,0 +1,11 @@
+default_variant:
+  topology_type: primary_read_replica
+  required_risks: 6
+  read_after_write_sensitive_examples:
+    - order_created_confirmation
+    - account_balance
+    - permission_change
+rules:
+  live_replica_required: false
+  must_distinguish_replication_and_backup: true
+  require_mitigation_per_risk: true

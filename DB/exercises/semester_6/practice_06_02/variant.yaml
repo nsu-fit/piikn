@@ -1,0 +1,14 @@
+default_variant:
+  schema: app
+  observed_table: app.orders
+  update_batch_size: 150
+  required_queries:
+    - q01_database_and_settings
+    - q02_course_schemas
+    - q03_app_relations
+    - q04_relation_files
+    - q05_activity
+    - q06_relation_sizes
+rules:
+  manual_data_directory_edits_forbidden: true
+  checkpoint_artifact: true
