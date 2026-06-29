@@ -6,6 +6,8 @@
 
 Используйте таблицы из `provided/small_relations.md`.
 
+Дополнительные варианты для тренировки и индивидуализации заданий находятся в `provided/raw_derived_relational_algebra_variants.md`. Основное задание этой практики опирается на `provided/small_relations.md`; дополнительные варианты выдаются преподавателем отдельно.
+
 Обозначения:
 
 - selection: `sigma_{condition}(R)`;

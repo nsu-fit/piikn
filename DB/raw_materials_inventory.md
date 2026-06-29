@@ -86,18 +86,28 @@
 | `DB/raw/Рабочая группа РГБД 2025/Упражнения на нормализацию` | Только `desktop.ini` | Пока не использовать; если появятся файлы, связать с 5.10-5.11 |
 | `DB/raw/Рабочая группа РГБД 2025/Упражнения на преобразования моделей` | Только `desktop.ini` | Пока не использовать; потенциально связать с ER -> relational mapping |
 
-## Куда встроить в текущий курс
+## Уже встроено в текущий курс
+
+| Целевой материал | Добавленный файл задания | Преподавательский эталон | Источник идей |
+|---|---|---|---|
+| Практика 5.5, реляционная алгебра | `DB/exercises/semester_5/practice_05_05/provided/raw_derived_relational_algebra_variants.md` | `DB/exercise_solutions/semester_5/practice_05_05/raw_derived_relational_algebra_solutions.md` | Упражнения и ответы по реляционной алгебре |
+| Практика 5.6 / контрольная 5.8, SQL DQL | `DB/exercises/semester_5/practice_05_06/provided/raw_derived_sql_task_bank.md` | `DB/exercise_solutions/semester_5/practice_05_06/raw_derived_sql_task_bank_solutions.md` | SQL-HR-1/2, перенесено на `bookings` |
+| Практика 5.9, DDL и ограничения | `DB/exercises/semester_5/practice_05_09/provided/raw_derived_domain_variant_bank.md` | `DB/exercise_solutions/semester_5/practice_05_09/raw_derived_domain_variant_solutions.md` | ER/DDL/DML practical assignments |
+| Практика 5.15, интегрированная контрольная | `DB/exercises/semester_5/practice_05_15/provided/raw_derived_integrated_variant_bank.md` | `DB/exercise_solutions/semester_5/practice_05_15/raw_derived_integrated_solutions.md` | Контрольная работа N2 и ER/DDL/DML variants |
+| Практика 6.5, оптимизационный практикум | `DB/exercises/semester_6/practice_06_05/provided/raw_derived_student_group_optimization_variant.md` | `DB/exercise_solutions/semester_6/practice_06_05/raw_derived_student_group_optimization_solution.md` | Черновое задание на оптимизацию запросов |
+
+## Куда еще можно встроить материалы
 
 | Целевой материал | Что брать из raw | Тип интеграции |
 |---|---|---|
-| `DB/exercises/semester_5/practice_05_05` | Реляционная алгебра | Добавить 1-2 дополнительных варианта малых отношений и expected answers |
-| `DB/exercises/semester_5/practice_05_06` | SQL-HR-1 | Расширить банк `SELECT`-задач, переписав под flights/bookings |
+| `DB/exercises/semester_5/practice_05_05` | Реляционная алгебра | Расширять уже добавленный банк малыми отношениями и expected answers |
+| `DB/exercises/semester_5/practice_05_06` | SQL-HR-1 | Расширять уже добавленный банк `SELECT`-задач под flights/bookings |
 | `DB/exercises/semester_5/practice_05_08` | SQL-HR-1/2, контрольная N2 | Создать пул вариантов контрольной: простые запросы, joins, aggregates, `EXISTS` |
-| `DB/exercises/semester_5/practice_05_09` | DDL/DML/ошибкоустойчивость | Добавить альтернативные предметные области для `schema.sql` и `check_constraints.sql` |
+| `DB/exercises/semester_5/practice_05_09` | DDL/DML/ошибкоустойчивость | Расширять уже добавленный банк предметных областей и проверочных сценариев |
 | `DB/exercises/semester_5/practice_05_10` | ER/DDL предметные области | Превратить варианты в плоские таблицы для FD/anomaly analysis |
 | `DB/exercises/semester_5/practice_05_11` | ER с решениями, DDL | Сгенерировать reference decompositions |
-| `DB/exercises/semester_5/practice_05_15` | Контрольная N2, ER/DDL/DML | Сформировать банк интегрированных вариантов |
-| `DB/exercises/semester_6/practice_06_05` | Оптимизация запросов | Доработать 1-2 контрольных варианта с seed data и планами |
+| `DB/exercises/semester_5/practice_05_15` | Контрольная N2, ER/DDL/DML | Расширять уже добавленный банк интегрированных вариантов |
+| `DB/exercises/semester_6/practice_06_05` | Оптимизация запросов | Доработать дополнительные контрольные варианты с seed data и планами |
 | `DB/exercise_solutions` | Все файлы с решениями | Использовать как преподавательский источник, не включать в student template |
 
 ## Правила переработки
